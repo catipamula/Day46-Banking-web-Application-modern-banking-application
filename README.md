@@ -24,7 +24,3 @@ A modern web banking application engineered with HTML, CSS , JavaScript, Bootstr
 - Request loan from bank
 - Close and remove account
 - Happy banking! 💸😊
-
-### Feedback
-
-If you have any feedback, please reach out to me at irfanalamt@gmail.com
