@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Web Application</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Login Page -->
+    <div id="loginPage">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+
+    <!-- Account Dashboard -->
+    <div id="dashboard" style="display: none;">
+      <h2>Welcome <span id="loggedInUser"></span></h2>
+      <button id="logoutBtn" class="btn btn-danger">Logout</button>
+      <hr>
+      <h3>Account Balance: $<span id="accountBalance">1000</span></h3>
+      <h3>Transaction History</h3>
+      <ul id="transactionList" class="list-group">
+        <!-- Transactions will be dynamically added here -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Login Form Submission
+      $('#loginForm').submit(function(e){
+        e.preventDefault();
+        var username = $('#username').val();
+        var password = $('#password').val();
+        // Simple authentication (username: admin, password: password)
+        if (username === 'admin' && password === 'password') {
+          $('#loginPage').hide();
+          $('#dashboard').show();
+          $('#loggedInUser').text(username);
+        } else {
+          alert('Invalid username or password.');
+        }
+      });
+
+      // Logout Button Click
+      $('#logoutBtn').click(function(){
+        $('#dashboard').hide();
+        $('#loginPage').show();
+      });
+    });
+  </script>
+</body>
+</html>
