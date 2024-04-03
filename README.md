@@ -1,7 +1,7 @@
 # Modern Banker
 
 A modern web banking application engineered with HTML, CSS , JavaScript, Bootstrap.
-https://irfanalamt.github.io/modern-banking-application/
+
 
 ## Usage
 
